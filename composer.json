@@ -17,5 +17,5 @@
         "release:minor": "conventional-changelog --minor --commit",
         "release:major": "conventional-changelog --major --commit"
     },
-    "version": "origin/main"
+    "version": "0.4.9"
 }
