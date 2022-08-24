@@ -4,6 +4,16 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [origin/main](https://github.com/jaymeh/test-releasable/compare/vorigin/main...vorigin/main) (2022-08-24)
+
+### Bug Fixes
+
+* Correct dodgey package version. ([abe330](https://github.com/jaymeh/test-releasable/commit/abe330e7bfc2249b39a4d2b1309af8918cca6caf))
+* Fixes dodget package version. ([652b63](https://github.com/jaymeh/test-releasable/commit/652b63326a5759e3a0d2807f02f309e7b31dfd2f))
+
+
+---
+
 ## [origin/main](https://github.com/jaymeh/test-releasable/compare/origin/main...vorigin/main) (2022-08-24)
 
 
