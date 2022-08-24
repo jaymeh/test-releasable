@@ -24,6 +24,18 @@ jobs:
       - name: Clone sources
         uses: actions/checkout@v2
 
+      - name: Check version ${{ env.VERSION_NUMBER }} consistency in CHANGELOG
+        run: |
+          CURRENT_DATE=$(date +'%Y-%m-%d')
+          CHANGELOG_VERSION=$(grep -E "## \[(.*)\] - $CURRENT_DATE"  CHANGELOG.md | sed 's/ //g')
+          if [[ $CHANGELOG_VERSION == "##[${{ env.VERSION_NUMBER }}]-$CURRENT_DATE" ]]
+          then
+              echo "CHANGELOG VERSION OK"
+          else
+              echo "CHANGELOG VERSION KO"
+              exit 1
+          fi
+
       - name: Prepare release notes
         run: |
           VERSION_RELEASE_NOTES=$(awk -v ver="[${{ env.VERSION_NUMBER }}]" '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p && NF' CHANGELOG.md)
