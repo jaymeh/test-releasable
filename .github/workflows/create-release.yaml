@@ -32,13 +32,13 @@ jobs:
 
       - name: Get Release Title
         id: release_title
-        run: |
-          export VERSION_NUMBER=$(grep -Eo "^## \[(.*)\]" CHANGELOG.md | cut -d '[' -f 2 | cut -d ']' -f 1 | head -1)
-          echo "::set-env name=VERSION_NUMBER::${VERSION_NUMBER}"
+        id: release_vars
+        run:
+          echo "::set-output name=version_number::$(grep -Eo "^## \[(.*)\]" CHANGELOG.md | cut -d '[' -f 2 | cut -d ']' -f 1 | head -1)"
 
       - name: Output Release Title
         run:
-          echo $VERSION_NUMBER
+          echo ${{ steps.release_vars.outputs.version_number }}
 
       - name: Release
         uses: softprops/action-gh-release@v1
