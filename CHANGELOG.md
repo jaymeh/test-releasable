@@ -4,6 +4,23 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.3.0](https://github.com/jaymeh/test-releasable/compare/v0.2.0...v0.3.0) (2022-08-24)
+
+### Features
+
+* Adds new feature. ([a7b285](https://github.com/jaymeh/test-releasable/commit/a7b28584888dcf16064e5a16580e410f6526c49d))
+* Another feature. ([867106](https://github.com/jaymeh/test-releasable/commit/867106a88711a428b094c323a36d0b5ecc8baa17), [c8c966](https://github.com/jaymeh/test-releasable/commit/c8c96641b10c07dd548bb0803ccf42b6be3a44d0))
+* Feat again. ([aae4a0](https://github.com/jaymeh/test-releasable/commit/aae4a011919aeef7c59d7d7972802f1b05a66c48))
+* New feat. ([81accf](https://github.com/jaymeh/test-releasable/commit/81accf29043c6976de8f85386fd8fce148a05654))
+* One last attempt. ([13049c](https://github.com/jaymeh/test-releasable/commit/13049c3ee83e5dc0a98c8b9ad07f514c8ad5294f))
+
+### Bug Fixes
+
+* Drop version ([de2137](https://github.com/jaymeh/test-releasable/commit/de21372d3d52656bc5f96a6f54346b97bd3b4d35))
+
+
+---
+
 ## [0.3.0](https://github.com/jaymeh/test-releasable/compare/v0.2.0...0.3.0) (2022-08-24)
 
 ### Features
