@@ -4,6 +4,11 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.6](https://github.com/jaymeh/test-releasable/compare/v0.4.5...v0.4.6) (2022-08-24)
+
+
+---
+
 ## [0.4.5](https://github.com/jaymeh/test-releasable/compare/v0.4.4...v0.4.5) (2022-08-24)
 
 
