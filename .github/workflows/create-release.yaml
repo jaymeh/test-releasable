@@ -8,14 +8,6 @@ jobs:
    new-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Check naming convention
-        run: |
-          VERIF=$(echo ${{ github.event.inputs.tag_name }} | grep -E "^([0-9]{1,}\.)([0-9]{1,}\.)([0-9]{1,})(-(alpha|beta)\.[0-9]{1,})?$")
-          if [ ! ${VERIF} ]
-          then
-            echo "Tag name '${{ github.event.inputs.tag_name }}' does not comply with naming convention vX.Y.Z"
-            exit 1
-          fi
 
       - name: Clone sources
         uses: actions/checkout@v2
