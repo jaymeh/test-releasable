@@ -19,8 +19,8 @@ jobs:
 
       - name: Build Changelog
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "jaymeh@users.noreply.github.com"
+          git config --local user.name "Jamie Sykes"
           composer run-script release
 
       - name: Push changes
@@ -29,18 +29,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           tags: true
-
-      - name: Get Release Title
-        id: release_vars
-        run:
-          echo "::set-output name=version_number::$(grep -Eo "^## \[(.*)\]" CHANGELOG.md | cut -d '[' -f 2 | cut -d ']' -f 1 | head -1)"
-      
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          draft: false
-          name: ${{ steps.release_vars.outputs.version_number }}
-          generate_release_notes: true
 
       # - name: Check version ${{ env.VERSION_NUMBER }} consistency in CHANGELOG
       #   run: |

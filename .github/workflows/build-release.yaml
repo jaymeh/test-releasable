@@ -1,0 +1,25 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get Release Title
+        id: release_vars
+        run:
+          echo "::set-output name=version_number::$(grep -Eo "^## \[(.*)\]" CHANGELOG.md | cut -d '[' -f 2 | cut -d ']' -f 1 | head -1)"
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          name: ${{ steps.release_vars.outputs.version_number }}
+          generate_release_notes: true
