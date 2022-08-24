@@ -3,10 +3,6 @@ on:
   workflow_dispatch:
     branches:
       - main
-    inputs:
-      tag_name:
-        type: string
-        required: true
 
 jobs:
    new-release:
