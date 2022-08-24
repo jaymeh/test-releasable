@@ -24,7 +24,6 @@ jobs:
           composer run-script release
 
       - name: Get Release Title
-        id: release_title
         id: release_vars
         run:
           echo "::set-output name=version_number::$(grep -Eo "^## \[(.*)\]" CHANGELOG.md | cut -d '[' -f 2 | cut -d ']' -f 1 | head -1)"
