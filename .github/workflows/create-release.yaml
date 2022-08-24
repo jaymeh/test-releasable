@@ -17,6 +17,9 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-interaction
 
+      - name: Build Changelog
+        run: composer run-script release
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
