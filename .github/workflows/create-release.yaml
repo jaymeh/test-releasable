@@ -23,29 +23,41 @@ jobs:
 
       - name: Clone sources
         uses: actions/checkout@v2
-
-      - name: Check version ${{ env.VERSION_NUMBER }} consistency in CHANGELOG
-        run: |
-          CURRENT_DATE=$(date +'%Y-%m-%d')
-          CHANGELOG_VERSION=$(grep -E "## \[(.*)\] - $CURRENT_DATE"  CHANGELOG.md | sed 's/ //g')
-          if [[ $CHANGELOG_VERSION == "##[${{ env.VERSION_NUMBER }}]-$CURRENT_DATE" ]]
-          then
-              echo "CHANGELOG VERSION OK"
-          else
-              echo "CHANGELOG VERSION KO"
-              exit 1
-          fi
-
-      - name: Prepare release notes
-        run: |
-          VERSION_RELEASE_NOTES=$(awk -v ver="[${{ env.VERSION_NUMBER }}]" '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p && NF' CHANGELOG.md)
-          echo "$VERSION_RELEASE_NOTES" >> CHANGELOG.txt
-
-      - name: Create release ${{ env.VERSION_NUMBER }}
-        uses: softprops/action-gh-release@v1
         with:
-          body_path: CHANGELOG.txt
-          name: ${{ env.VERSION_NUMBER }}
-          tag_name: ${{ github.event.inputs.tag_name }}
-          draft: ${{ github.event.inputs.draft }}
-          prerelease: ${{ github.event.inputs.prerelease }}
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
+
+      # - name: Check version ${{ env.VERSION_NUMBER }} consistency in CHANGELOG
+      #   run: |
+      #     CURRENT_DATE=$(date +'%Y-%m-%d')
+      #     CHANGELOG_VERSION=$(grep -E "## \[(.*)\] - $CURRENT_DATE"  CHANGELOG.md | sed 's/ //g')
+      #     if [[ $CHANGELOG_VERSION == "##[${{ env.VERSION_NUMBER }}]-$CURRENT_DATE" ]]
+      #     then
+      #         echo "CHANGELOG VERSION OK"
+      #     else
+      #         echo "CHANGELOG VERSION KO"
+      #         exit 1
+      #     fi
+
+      # - name: Prepare release notes
+      #   run: |
+      #     VERSION_RELEASE_NOTES=$(awk -v ver="[${{ env.VERSION_NUMBER }}]" '/^## / { if (p) { exit }; if ($2 == ver) { p=1; next} } p && NF' CHANGELOG.md)
+      #     echo "$VERSION_RELEASE_NOTES" >> CHANGELOG.txt
+
+      # - name: Create release ${{ env.VERSION_NUMBER }}
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     body_path: CHANGELOG.txt
+      #     name: ${{ env.VERSION_NUMBER }}
+      #     tag_name: ${{ github.event.inputs.tag_name }}
+      #     draft: ${{ github.event.inputs.draft }}
+      #     prerelease: ${{ github.event.inputs.prerelease }}
