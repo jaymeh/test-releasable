@@ -26,7 +26,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          token: ${{ secrets.MY_PAT }}
+          github_token: ${{ secrets.MY_PAT }}
           branch: ${{ github.ref }}
           tags: true
 
