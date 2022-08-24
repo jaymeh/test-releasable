@@ -9,6 +9,16 @@ All notable changes to this project will be documented in this file.
 ### Features
 
 * Adds new feature. ([a7b285](https://github.com/jaymeh/test-releasable/commit/a7b28584888dcf16064e5a16580e410f6526c49d))
+* Another feature. ([867106](https://github.com/jaymeh/test-releasable/commit/867106a88711a428b094c323a36d0b5ecc8baa17), [c8c966](https://github.com/jaymeh/test-releasable/commit/c8c96641b10c07dd548bb0803ccf42b6be3a44d0))
+
+
+---
+
+## [0.3.0](https://github.com/jaymeh/test-releasable/compare/v0.2.0...0.3.0) (2022-08-24)
+
+### Features
+
+* Adds new feature. ([a7b285](https://github.com/jaymeh/test-releasable/commit/a7b28584888dcf16064e5a16580e410f6526c49d))
 * Another feature. ([c8c966](https://github.com/jaymeh/test-releasable/commit/c8c96641b10c07dd548bb0803ccf42b6be3a44d0))
 
 
