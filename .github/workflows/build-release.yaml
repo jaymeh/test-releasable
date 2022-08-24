@@ -23,3 +23,4 @@ jobs:
           draft: false
           name: ${{ steps.release_vars.outputs.version_number }}
           generate_release_notes: true
+          token: ${{ secrets.MY_PAT }}
