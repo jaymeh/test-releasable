@@ -23,13 +23,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           composer run-script release
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-          tags: true
-
       - name: Get Release Title
         id: release_title
         id: release_vars
@@ -39,6 +32,13 @@ jobs:
       - name: Output Release Title
         run:
           echo ${{ steps.release_vars.outputs.version_number }}
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
 
       - name: Release
         uses: softprops/action-gh-release@v1
