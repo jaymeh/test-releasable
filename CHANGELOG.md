@@ -4,6 +4,17 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.10](https://github.com/jaymeh/test-releasable/compare/v0.4.9...v0.4.10) (2022-08-24)
+
+### Bug Fixes
+
+* Attempt to fix changelog. ([96d6a4](https://github.com/jaymeh/test-releasable/commit/96d6a498027d5cb64dbf2dc9ca81e078927ad255))
+* Correct dodgey package version. ([abe330](https://github.com/jaymeh/test-releasable/commit/abe330e7bfc2249b39a4d2b1309af8918cca6caf))
+* Fixes dodget package version. ([652b63](https://github.com/jaymeh/test-releasable/commit/652b63326a5759e3a0d2807f02f309e7b31dfd2f))
+
+
+---
+
 ## [0.4.9](https://github.com/jaymeh/test-releasable/compare/v0.4.8...v0.4.9) (2022-08-24)
 
 
