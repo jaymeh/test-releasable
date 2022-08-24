@@ -1,10 +1,12 @@
 name: Create Release # Workflow name displayed on GitHub 
 on:
-  workflow_dispatch: # Trigger manually 
-    branches: [main] # Branch on which the workflow will run
+  workflow_dispatch:
+    branches:
+      - main
     inputs:
-      tag_name: string
-      required: true
+      tag_name:
+        type: string
+        required: true
 
 jobs:
    new-release:
