@@ -30,7 +30,7 @@ jobs:
           chmod +x changelog-checker.phar
 
       - name: Get Release Notes
-        run: ./changelog-checker > ${{ github.workspace }}-CHANGELOG.txt
+        run: ./changelog-checker.phar > ${{ github.workspace }}-CHANGELOG.txt
 
       - name: Release
         uses: softprops/action-gh-release@v1
