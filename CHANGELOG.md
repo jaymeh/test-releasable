@@ -4,6 +4,18 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.12](https://github.com/jaymeh/test-releasable/compare/v0.4.11...v0.4.12) (2022-09-08)
+
+### Bug Fixes
+
+
+##### Ci
+
+* Changes name of script to run. ([2f09d2](https://github.com/jaymeh/test-releasable/commit/2f09d27e496091d49e08b84b5574b933e029a046))
+
+
+---
+
 ## [0.4.11](https://github.com/jaymeh/test-releasable/compare/v0.4.10...v0.4.11) (2022-09-08)
 
 ### Bug Fixes
