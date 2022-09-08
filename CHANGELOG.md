@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [0.4.11](https://github.com/jaymeh/test-releasable/compare/v0.4.10...v0.4.11) (2022-09-08)
+
+### Bug Fixes
+
+
+##### Ci
+
+* Adds a fix in to allow release build ([15c3f6](https://github.com/jaymeh/test-releasable/commit/15c3f60d93996b35d72ae3b91ec9a355cefbdf54))
+* Amend release deployment script. ([c83c15](https://github.com/jaymeh/test-releasable/commit/c83c15c149ad8820ea02893e06e7cc92e5d5d5bf))
+
+
+---
+
 ## [0.4.10](https://github.com/jaymeh/test-releasable/compare/v0.4.9...v0.4.10) (2022-08-24)
 
 ### Bug Fixes
